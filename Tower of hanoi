@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+void Tower_of_Hanoi(int n, string Start, string Helper, string End ){
+    if(n==1){
+        //cout<<"hii";
+        cout<<"Transferring " <<n<<" from " << Start << " to " << End<<endl;
+        return;
+    }
+    else {
+    Tower_of_Hanoi(n-1, Start,End, Helper);
+    cout<<"Transferring " <<n<<" from " << Start << " to " << End<<endl;
+    Tower_of_Hanoi(n-1,Helper,Start,End);
+    }
+}
+
+int main(){
+    int n=3;
+    //cout<<"Enter the number";
+    //cin>>n;
+    Tower_of_Hanoi(n, "S","H","E");
+    return 0;
+}
